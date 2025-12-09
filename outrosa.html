@@ -1,89 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <title>Instituto Prime Health</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aura Lab</title>
-    <script src="script.js"></script>
-    <style>
-    body {
-    
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.container {
-    text-align: center;
-    background-color:rgb(64, 217, 255);
-    padding: 30px;
-    border-radius: 10px;
-}
-
-button {
-    background-color: #008cff;
-    color: rgb(31, 19, 141);
-    border: none;
-    padding:10px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor:pointer;
-
-} 
-footer{
-    text-align: center;
-    background-color:rgb(0, 120, 175);
-    padding: 30px;
-    border-radius: 10px;
-    padding: 15px;
-}
-    </style>
+    <link rel="stylesheet" href="Nathan.css">
 </head>
+
 <body>
-    
-   <header class="container">
-        Aura Lab - Laboratorio Tecnologico
+
+    <div class="circulo c1"></div>
+    <div class="circulo c2"></div>
+    <div class="circulo c3"></div>
+    <div class="circulo c4"></div>
+    <div class="circulo c5"></div>
+
+    <header>
+        <h2>Instituto Prime Health- Laboratório de Pesquisa em Saúde</h2>
     </header>
-    <h2> Escolha em uma das opçoes para saber mais sobre nos:</h2>
 
-    <ul>
-        <li onclick="carregarCurso('Quem somos')">Quem somos</li>
-        <li onclick="carregarCurso('O que é o outubro rosa')">O que é o outubro rosa</li>
-        <li onclick="carregarCurso('O que é o novembro azul')">O que é o novembro azul</li>
-        <li onclick="carregarCurso('Prevenções do câncer de mama')">Prevenções do câncer de mama</li>
-        <li onclick="carregarCurso('Prevenções do câncer de próstata')">Prevenções do câncer de próstata</li>
+    <main>
+        <h3>Escolha uma das opções para saber mais sobre nós:</h3>
 
-    </ul>
-    <a id="button" href="index.html">Voltar a pagina inicial</a>
-    <div id="codigo"></div>
-<footer>
-    &copy; 2025 Aura Lab - Todos os direitos reservados.
-    <p>Telefone:(31) 93333-4444</p>
-    <a href="https://www.instagram.com/aura_lab/" style="text-decoration:none; color: rgb(9, 9, 9);">instagram</a>
-</footer>
-<script>
- async function carregarCurso(curso) {
-    try{
-        document.getElementById("codigo") .innerHTML= "Carregando informacoes do laboratorio...";
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        <ul>
+            <li onclick="carregarCurso('Quem somos')">Quem somos</li>
+            <li onclick="carregarCurso('O que é o outubro rosa')">O que é o outubro rosa</li>
+            <li onclick="carregarCurso('O que é o novembro azul')">O que é o novembro azul</li>
+            <li onclick="carregarCurso('Prevenções do câncer de mama')">Prevenções do câncer de mama</li>
+            <li onclick="carregarCurso('Prevenções do câncer de próstata')">Prevenções do câncer de próstata</li>
+        </ul>
 
-let mensagens = {
-    "Quem somos?": "Somos um laboratorio de tecnologia focado em ajudar e previnir o câncer de mama e próstata.",
-    "O que é o outubro rosa": "Campanha que conscientiza sobre o câncer de mama e destaca a importância do diagnóstico precoce.",
-    "O que é o novembro azul": "movimento dedicado á saúde do homem, com foco na prevenção de próstata."
-    "Prevenções do câncer de mama": "As prevenções do câncer de mama são: fazer mamografia na idade indicada, realizar autoexame, manter hábitos saudáveis."
-    "Prevenções do câncer de próstata":"fazer exames preventivos, alimentação equilibrada, atividade física e evitar tabagismo."
-};
-document.getElementById("codigo").innerHTML = mensagens[curso];
+        <a id="button" href="outrosa.html">Voltar à página inicial</a>
 
- }catch (erro) {
-    document.getElementById("codigo").innerHTML = "Erro ao carregar informações do site.";
-    console.error("Erro capturado:", erro);
+        <div id="codigo"></div>
+    </main>
 
-}
-}
-</script>
+    <footer>
+        <p class="cop">&copy; 2025 Instituto Prime Health - Todos os direitos reservados.<p>
+        <p>Telefone: (31) 93333-4444</p>
+        <a href="https://www.instagram.com/aura_lab/" target="_blank">Instagram</a>
+    </footer>
+
+    <script>
+        async function carregarCurso(curso) {
+            try {
+                document.getElementById("codigo").style.display = "block";
+                
+                document.getElementById("codigo").innerHTML = "Carregando informações...";
+
+                await new Promise(resolve => setTimeout(resolve, 1000));
+
+                let mensagens = {
+                    "Quem somos": "Somos um laboratório de pesquisa em saude, que busca orientar a sociedade na conscientização e prevenção do câncer de mama e de próstata.",
+                    "O que é o outubro rosa": "Campanha mundial de conscientização sobre o câncer de mama, incentivando a prevenção e o diagnóstico precoce,por meio de mamografias e autoexame visando a saude e bem estar da mulher.",
+                    "O que é o novembro azul": "Campanha voltada à saúde do homem, com foco principal na prevenção do câncer de próstata e diagnóstico precoce, incentiva a realização de exames preventivos e o cuidado regular com a saude masculina.",
+                    "Prevenções do câncer de mama": "Realizar mamografias, fazer o autoexame, manter alimentação saudável e evitar tabagismo e exccesso de álcool.",
+                    "Prevenções do câncer de próstata": "Fazer exames periódicos, fazer check-ups anuais (principalmente após os 40 anos), manter hábitos saudáveis e controlar pressão,colesterol e peso."
+                };
+
+                document.getElementById("codigo").innerHTML = mensagens[curso];
+                
+
+ 
+                const backgroundColors = {
+                    "Quem somos": "#bbf7d0", 
+                    "O que é o outubro rosa": "#ffa6c9", 
+                    "O que é o novembro azul": "#7EC8E3", 
+                    "Prevenções do câncer de mama": "#ffe4e6", 
+                    "Prevenções do câncer de próstata": "#e0f7fa" 
+                };
+
+                const corFundo = backgroundColors[curso] || "#f0fdf4";
+
+   
+                document.body.style.background = `radial-gradient(circle at top left, ${corFundo} 0%, transparent 40%),
+                                                 radial-gradient(circle at bottom right, ${corFundo} 0%, transparent 40%),
+                                                 linear-gradient(135deg, ${corFundo}, ${corFundo})`;
+            } catch (erro) {
+                document.getElementById("codigo").innerHTML = "Erro ao carregar as informações.";
+                console.error(erro);
+            }
+        }
+    </script>
+
 </body>
-
 </html>

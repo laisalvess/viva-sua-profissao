@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: 
+        radial-gradient(circle at top left, #bbf7d0 0%, transparent 40%),
+        radial-gradient(circle at bottom right, #86efac 0%, transparent 40%),
+        linear-gradient(135deg, #f0fdf4, #dcfce7);
+    color: #064e3b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+    user-select: none;
+}
+
+header {
+    width: 100%;
+    background: linear-gradient(135deg, #10b981, #22c55e);
+    padding: 25px;
+    text-align: center;
+    border-bottom: 3px solid #064e3b;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    z-index: 2;
+}
+
+header h2 {
+    font-size: 26px;
+    letter-spacing: 1px;
+    color: white;
+    user-select: none;
+}
+
+main {
+    width: 100%;
+    max-width: 900px;
+    padding: 30px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+main h3 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 25px;
+    color: #065f46;
+    user-select: none;
+}
+
+ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+ul li {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    padding: 16px;
+    border-radius: 14px;
+    margin-bottom: 14px;
+    cursor: pointer;
+    border: 2px solid #10b981;
+    text-align: center;
+    transition: 0.3s ease;
+    font-weight: 500;
+    user-select: none;
+}
+
+ul li:hover {
+    background: #10b981;
+    color: white;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(16,185,129,0.4);
+}
+
+#codigo {
+    display: none;
+    margin-top: 25px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    border: 2px solid #10b981;
+    padding: 20px;
+    border-radius: 18px;
+    min-height: 90px;
+    font-size: 16px;
+    line-height: 1.6;
+    animation: fadeIn 0.6s ease;
+    user-select: none;
+    
+}
+
+#button {
+    display: block;
+    margin: 30px auto 0 auto;
+    background: linear-gradient(135deg, #34d399, #10b981);
+    color: #064e3b;
+    padding: 12px 35px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    width: fit-content;
+    transition: 0.3s;
+    box-shadow: 0 8px 20px rgba(16,185,129,0.4);
+    user-select: none;
+}
+
+#button:hover {
+    background: #065f46;
+    color: white;
+    transform: scale(1.05);
+}
+
+footer {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(135deg, #10b981, #22c55e);
+    padding: 18px;
+    font-size: 14px;
+    color: white;
+    border-top: 3px solid #064e3b;
+    z-index: 2;
+    user-select: none;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+.cop {
+    user-select: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    header h2 {
+        font-size: 20px;
+    }
+
+    main h3 {
+        font-size: 16px;
+    }
+
+    ul li {
+        font-size: 14px;
+    }
+}
+
+.circulo {
+    position: absolute;
+    background: linear-gradient(135deg, #34d399, #10b981);
+    border-radius: 50%;
+    opacity: 0.9;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.c1 {
+    width: 90px;
+    height: 90px;
+    top: 140px;
+    left: 40px;
+}
+
+.c2 {
+    width: 70px;
+    height: 70px;
+    top: 270px;
+    left: 70px;
+}
+
+.c3 {
+    width: 45px;
+    height: 45px;
+    top: 390px;
+    left: 40px;
+}
+
+.c4 {
+    width: 110px;
+    height: 110px;
+    top: 130px;
+    right: 60px;
+    box-shadow: 0 0 0 6px rgba(0,0,0,0.15);
+}
+
+.c5 {
+    width: 140px;
+    height: 140px;
+    bottom: 50px;
+    right: 60px;
+}
+
+
+.circulo {
+    animation: flutuar 10s ease-in-out infinite;
+}
+
+.c1 { animation-duration: 9s; }
+.c2 { animation-duration: 12s; }
+.c3 { animation-duration: 8s; }
+.c4 { animation-duration: 11s; }
+.c5 { animation-duration: 13s; }
+
+@keyframes flutuar {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
